@@ -1,0 +1,22 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Информация о пользователе";
+}
+
+<h3>Профиль пользователя</h3>
+<div class="card" style="width: 18rem;">
+    <img src="@Model.Avatar" class="card-img-top" alt="...">
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="card-body">  
+                <p class="card-text">
+                    <strong>ID:</strong> @Model.Id<br />
+                    <strong>Имя:</strong> @Model.FirstName<br />
+                    <strong>Фамилия:</strong> @Model.LastName<br />
+                    <strong>Почта:</strong> @Model.Email
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

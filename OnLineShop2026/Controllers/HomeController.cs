@@ -24,6 +24,5 @@ namespace OnLineShop2026.Controllers
             var listProducts = productRepository.GetAll();
             return View(listProducts);
         }
-
     }
 }

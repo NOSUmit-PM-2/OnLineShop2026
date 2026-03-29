@@ -1,8 +1,10 @@
-﻿namespace OnLineShop2026.Models
+﻿using System;
+
+namespace OnLineShop2026.Models
 {
     public class User
     {
-        private const string DefaultAvatar = "/images/default_avatar.png";
+        private const string DefaultAvatar = "/images/default_avatar.jpg";
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -18,19 +20,30 @@
             AvatarPath = DefaultAvatar;
         }
 
-        public User(string firstName, string lastName, string email , string ? avatarPath = null)
+        public User(string firstName, string lastName, string email, string? avatarPath = null)
         {
             Id = Guid.NewGuid();
             FirstName = firstName ?? string.Empty;
             LastName = lastName ?? string.Empty;
             Email = email ?? string.Empty;
-            AvatarPath = string.IsNullOrEmpty(avatarPath) ? DefaultAvatar : avatarPath!;
+            AvatarPath = string.IsNullOrWhiteSpace(avatarPath) ? DefaultAvatar : avatarPath!;
         }
-        
+
         public string FullName => $"{FirstName} {LastName}";
+
         public override string ToString()
         {
             return $"Пользователь: {FullName}, Email: {Email}";
+        }
+    }
+
+    public class Profile
+    {
+        public User? Model { get; set; }
+
+        public string GetAvatarPath()
+        {
+            return string.IsNullOrWhiteSpace(Model?.AvatarPath) ? "/images/profile_img.png" : Model.AvatarPath;
         }
     }
 }

@@ -1,0 +1,35 @@
+﻿@model OnLineShop2026.Models.User
+@{
+    ViewData["Title"] = "Профиль пользователя";
+    var avatarPath = string.IsNullOrWhiteSpace(Model?.AvatarPath) ? "~/images/default_avatar.jpg" : Model!.AvatarPath;
+    var avatarUrl = Url.Content(avatarPath);
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card mb-3">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-4 text-center p-3">
+                    <img src="@avatarUrl"
+                         alt="Аватар пользователя"
+                         class="img-fluid rounded-circle"
+                         style="max-width:160px;" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title mb-1">@Model?.FullName</h4>
+                        <p class="text-muted mb-2">@Model?.Email</p>
+
+                        <ul class="list-unstyled mb-2">
+                            <li><strong>Имя:</strong> @Model?.FirstName</li>
+                            <li><strong>Фамилия:</strong> @Model?.LastName</li>
+                            <li><strong>Идентификатор:</strong> @Model?.Id</li>
+                        </ul>
+
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-sm">На главную</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

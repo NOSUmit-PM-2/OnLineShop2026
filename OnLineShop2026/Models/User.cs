@@ -10,7 +10,7 @@
 
         public string FullName => $"{Name} {Surname}";
 
-        public User(string name, string surname, string email, string avatarImage = "/images/default-avatar.png")
+        public User(string name, string surname, string email, string avatarImage = "/images/default-avatar.jpg")
         {
             Id = Guid.NewGuid();
             Name = name;

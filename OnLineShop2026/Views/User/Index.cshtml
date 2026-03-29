@@ -1,0 +1,37 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Пользователь";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body text-center p-4">
+
+                    <img src="@Model.AvatarImage"
+                         class="rounded-circle mb-3"
+                         style="width: 140px; height: 140px; object-fit: cover;" />
+
+                    <h3 class="mb-3">@Model.FullName</h3>
+
+                    <hr />
+
+                    <p class="mb-2">
+                        <strong>Email:</strong><br />
+                        @Model.Email
+                    </p>
+
+                    <p class="mb-2">
+                        <strong>ID:</strong><br />
+                        <small>@Model.Id</small>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

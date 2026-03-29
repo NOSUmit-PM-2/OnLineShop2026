@@ -10,7 +10,7 @@
 
 
 
-        public User(string name, string surname, string email, string avatar = "/images/Avatar_Heley.png")
+        public User(string name, string surname, string email, string avatar = "/images/Avatar_Haley.png")
         {
             Id = Guid.NewGuid();          
             Name = name;

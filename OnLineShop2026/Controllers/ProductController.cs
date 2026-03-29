@@ -14,7 +14,7 @@ namespace OnLineShop2026.Controllers
             this.productRepository = prodRep;
         }
 
-        public IActionResult Index(Guid id)
+        public IActionResult? Index(Guid id)
         {
             var product = productRepository.TryGetById(id);
             if (product == null) return null;

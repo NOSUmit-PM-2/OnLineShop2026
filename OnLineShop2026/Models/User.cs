@@ -6,9 +6,11 @@
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
-        public string AvatarImage { get; set; }
+        public string AvatarImage { get; set; } 
 
-        public User(string name, string surname, string email, string avatarImage)
+        public string FullName => $"{Name} {Surname}";
+
+        public User(string name, string surname, string email, string avatarImage = "/images/default-avatar.png")
         {
             Id = Guid.NewGuid();
             Name = name;
@@ -16,6 +18,8 @@
             Email = email;
             AvatarImage = avatarImage;
         }
+
+        
 
     }
 }

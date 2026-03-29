@@ -26,7 +26,7 @@
             Email = email ?? string.Empty;
             AvatarPath = string.IsNullOrEmpty(avatarPath) ? DefaultAvatar : avatarPath!;
         }
-
+        
         public string FullName => $"{FirstName} {LastName}";
         public override string ToString()
         {

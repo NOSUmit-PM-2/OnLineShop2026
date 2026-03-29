@@ -7,7 +7,7 @@ namespace OnLineShop2026.Controllers
     {
         public IActionResult Index()
         {
-            User user = new("Гузитаев", "Георгий", "pochta@gmail.com", "images/chel.jpg");
+            User user = new("Гузитаев", "Георгий", "pochta@gmail.com", "/images/chel.jpg");
             return View(user);
         }
     }

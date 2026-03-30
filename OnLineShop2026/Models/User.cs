@@ -7,7 +7,7 @@
         public string Email { get; set; }
         public string Avatar { get; set; }
 
-        public User(string nameSurname, string email, string avatar = "images/default_avatar.jpg")
+        public User(string nameSurname, string email, string avatar = "/images/default_avatar.jpg")
         {
             Id = Guid.NewGuid();
             NameSurname = nameSurname;

@@ -13,7 +13,7 @@ namespace OnLineShop2026.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(Guid id)
+        public IActionResult Index()
         {
             return View(user);
         }

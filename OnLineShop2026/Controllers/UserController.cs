@@ -4,21 +4,18 @@ using OnLineShop2026.Models;
 
 namespace OnLineShop2026.Controllers
 {
-    public class ProductController : Controller
+    public class UserController : Controller
     {
-    
-        IProductRepository productRepository;
-
-        public ProductController(IProductRepository prodRep)
+        User user = new User("Иван Иванов", "email@email.com");
+        private readonly ILogger<HomeController> _logger;
+        public UserController(ILogger<HomeController> logger)
         {
-            this.productRepository = prodRep;
+            _logger = logger;
         }
 
-        public IActionResult Index(Guid id)
+        public IActionResult Index()
         {
-            var product = productRepository.TryGetById(id);
-            if (product == null) return null;
-            return View(product);
+            return View(user);
         }
 
         //public IActionResult Index()
@@ -34,7 +31,6 @@ namespace OnLineShop2026.Controllers
         //    ViewBag.Pie = pie;
         //    return View();
         //}
-
 
         //public string Index()
         //{

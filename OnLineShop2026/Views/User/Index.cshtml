@@ -1,0 +1,14 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Подробнее о товаре";
+}
+
+<div class="card" style="width: 18rem;">
+    <img src="@Model.Avatar" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.NameSurname</h5>
+        <p class="card-text">@Model.Email</p>
+        <a asp-controller="Home" asp-action="Catalog" class="btn btn-primary">На Главную.</a>
+    </div>
+</div>
+

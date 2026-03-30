@@ -35,6 +35,7 @@ namespace OnLineShop2026.Controllers
         //    return View();
         //}
 
+
         //public string Index()
         //{
         //    Product pie = new Product("Пирожок", "с котятами", 50);

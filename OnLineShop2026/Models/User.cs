@@ -7,19 +7,21 @@ namespace OnLineShop2026.Models
 
 		public Guid Id { get; set; }
 		public string Name { get; set; }
+		public string Sername { get; set; }
 		public string Email { get; set; }
 		public string PhotoPath { get; set; }
 
-		public User(string name, string email, string photoPath = "/images/basePhoto.jpg")
+		public User(string name,string sername, string email, string photoPath = "/images/basePhoto.jpg")
 		{
 			Name = name;
+			Sername = sername;
 			Email = email;
 			PhotoPath = photoPath;
 		}
 
 		public override string ToString()
 		{
-			return $"Имя - {Name}, почта - {Email}";
+			return $"Имя - {Name + " " + Sername }, почта - {Email}";
 		}
 	}
 }

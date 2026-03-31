@@ -9,7 +9,7 @@ namespace OnLineShop2026.Controllers
     {
 		public IActionResult Index()
 		{
-			User user = new User("Элина Кокоева", "elina@mail.ru");
+			User user = new User("Элина", "Кокоева", "elina@mail.ru");
 			return View(user);
 		}
 	}

@@ -29,5 +29,13 @@ namespace OnLineShop2026.Controllers
 
             return View(userCart);
         }
+
+        public IActionResult Increment(Guid id)
+        {
+            var userCart = cartRepository.TryGetByUserId(1);
+            userCart?.Increment();
+
+            return View(userCart);
+        }
     }
 }

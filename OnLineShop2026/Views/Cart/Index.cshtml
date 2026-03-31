@@ -1,0 +1,34 @@
+﻿@model Cart
+@{
+    ViewData["Title"] = "Пользователь";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Корзина</h1>
+    <div>
+        Полная стоимость товаров - @Model.Cost
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>Товар</td>
+                <td>Стоимость</td>
+                <td>Количество</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.CartItems)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Cost</td>
+                    <td>@item.Amount</td>
+                    <td>
+                        <a asp-controller="Cart" asp-action="Increment" asp-route-id="@item.Product.Id" class="btn btn-outline-danger">-</a>
+                        <a asp-controller="Cart" asp-action="Decrement" asp-route-id="@item.Product.Id" class="btn btn-outline-success">+</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

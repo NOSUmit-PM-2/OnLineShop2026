@@ -1,0 +1,13 @@
+﻿@model User
+
+
+<div class="text-left">
+<h1 class="display-4 text-center">Профиль</h1>
+<div style="display: flex; justify-content: center; gap: 1rem; align-items: center;">
+    <div>
+            <h4>@Model.Fullname</h4>
+            <p>@Model.Email</p>
+    </div>
+    <img style="width: 8rem; height: 8rem;" src="@Model.Avatar" alt="avatar" />
+</div>
+</div>

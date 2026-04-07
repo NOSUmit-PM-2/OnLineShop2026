@@ -13,6 +13,7 @@ namespace OnLineShop2026.Models
 
 		public User(string name,string sername, string email, string photoPath = "/images/basePhoto.jpg")
 		{
+			Id = Guid.NewGuid();
 			Name = name;
 			Sername = sername;
 			Email = email;

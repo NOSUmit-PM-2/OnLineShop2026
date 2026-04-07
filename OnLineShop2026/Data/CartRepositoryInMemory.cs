@@ -9,6 +9,14 @@ namespace OnLineShop2026.Data
             new Cart()
         };
 
+            
+            public void Increment(Guid idProduct)
+        {
+            Cart cart = TryGetByUserId(int userId);
+            CartItem item = cart.CartItems.FirstOrDefault(x => x.Product.Id == idProduct);
+            item.Amount += 1;
+        }
+
         public Cart? TryGetByUserId(int userId)
         {
             return carts[0];

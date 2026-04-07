@@ -22,11 +22,18 @@ namespace OnLineShop2026.Controllers
             CartItem cartItem = new CartItem() 
             { 
                 Product = pr,
-                Amount = 3
+                Amount = 1
             };
             var userCart = cartRepository.TryGetByUserId(12314);
             userCart.CartItems.Add(cartItem);
 
+            return View(userCart);
+        }
+
+        public IActionResult Increment(Guid id)
+        {
+            var userCart = cartRepository.TryGetByUserId(12314);
+            userCart.Increment(id);
             return View(userCart);
         }
     }

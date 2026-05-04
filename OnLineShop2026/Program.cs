@@ -1,4 +1,5 @@
 using OnLineShop2026.Data;
+using OnLineShop2026.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IProductRepository, ProductRepositoryInMemory>();
 builder.Services.AddSingleton<ICartRepository, CartRepositoryInMemory>();
+builder.Services.AddSingleton<IUsersRepository, UsersRepositoryInMemory>();
 
 var app = builder.Build();
 

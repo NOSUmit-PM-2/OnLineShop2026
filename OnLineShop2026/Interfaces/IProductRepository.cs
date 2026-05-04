@@ -1,6 +1,6 @@
 ﻿using OnLineShop2026.Models;
 
-namespace OnLineShop2026.Data
+namespace OnLineShop2026.Interfaces
 {
     public interface IProductRepository
     {

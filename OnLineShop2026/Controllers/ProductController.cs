@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OnLineShop2026.Data;
+using OnLineShop2026.Interfaces;
 using OnLineShop2026.Models;
 
 namespace OnLineShop2026.Controllers

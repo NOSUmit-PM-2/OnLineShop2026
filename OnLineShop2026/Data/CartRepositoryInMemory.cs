@@ -1,4 +1,5 @@
-﻿using OnLineShop2026.Models;
+﻿using OnLineShop2026.Interfaces;
+using OnLineShop2026.Models;
 
 namespace OnLineShop2026.Data
 {

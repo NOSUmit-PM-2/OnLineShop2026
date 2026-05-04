@@ -25,6 +25,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Catalog">Каталог</a>
                         </li>
+    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                АДМИНИСТРАТОР
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-controller="User" asp-action="Index">Пользователи</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <a class="navbar-brand" asp-area="" asp-controller="user" asp-action="Index">Профиль</a>

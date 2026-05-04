@@ -1,0 +1,12 @@
+﻿@model User
+
+<h1 class="accordion-header">Страница пользователя</h1>
+<div class="card" style="width: 18rem;">
+    <img src="@Model.PhotoUrl" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">О себе</h5>
+        <p class="card-text">Имя: @Model.Name</p>
+        <p class="card-text">Фамилия: @Model.LastName</p>
+        <p class="card-text">Электронная почта: @Model.Email</p>
+    </div>
+</div>

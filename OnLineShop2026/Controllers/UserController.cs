@@ -13,7 +13,7 @@ namespace OnLineShop2026.Controllers
         public IActionResult Index()
         {
             var users = userRepository.GetAll();
-            return View();
+            return View(users);
         }
         public IActionResult Details(Guid userId)
         {

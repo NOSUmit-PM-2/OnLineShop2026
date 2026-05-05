@@ -7,11 +7,11 @@ namespace OnLineShop2026.Data
     {
         private static List<User> users = new List<User>()
         {
-            new User("Иван","Иванов","ivan@mail.com","/images/users/user1.jpg"),
+            new User("Иван","Иванов","ivan@mail.com","/images/user1.jpg"),
 
-            new User("Анна","Петрова","anna@mail.com","/images/users/user2.jpg"),
+            new User("Анна","Петрова","anna@mail.com","/images/user2.jpg"),
 
-            new User("Петр","Сидоров","petr@mail.com","/images/users/user3.jpg")
+            new User("Петр","Сидоров","petr@mail.com","/images/user3.jpg")
 
         };
 

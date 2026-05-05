@@ -1,0 +1,23 @@
+﻿@model OnLineShop2026.Models.User
+
+<h1>Пользователь</h1>
+
+<div class="card" style="width: 400px; padding:20px">
+
+    <img src="@Model.Icon"
+         width="200"
+         height="200" />
+
+    <h2>
+        @Model.Name @Model.Surname
+    </h2>
+
+    <p>
+        <b>Email:</b> @Model.Email
+    </p>
+
+    <p>
+        <b>ID:</b> @Model.UserId
+    </p>
+
+</div>

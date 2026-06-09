@@ -4,7 +4,9 @@
 }
 <h1>Каталог</h1>
 <div class="row">
-    <a asp-controller="" asp-action="" class="btn btn-primary">Сортировать</a>
+
+    <a asp-controller="Home" asp-action="Sort" class="btn btn-primary">Сортировать</a>
+
     @foreach(var product in @Model)
     {
         <div class="card" style="width: 18rem;">

@@ -4,11 +4,15 @@
 }
 
 <div class="card" style="width: 500px; height:300px; flex-direction:row; border-radius: 20px">
-    <img src="@Model.UserImage" class="card-img-top" style="width: 200px; height: 200px; border-radius:50%;" >
+    <div style="flex-direction:column">
+        <h3>Аватар:</h3>
+        <img src="@Model.UserImage" class="card-img-top" style="width: 200px; height: 200px; border-radius:50%;">
+    </div>
+    
     <div class="card-body">
         <h4 class="text-sm-start">Никнейм: @Model.Name</h4>
-        <p class="card-surname">Фамилия: @Model.Surname</p>
-        <p class="card-email">Почта: @Model.Email</p>
+        <h6 class="card-surname">Фамилия: @Model.Surname</h6>
+        <h6 class="card-email">Почта: @Model.Email</h6>
     </div>
 </div>
 

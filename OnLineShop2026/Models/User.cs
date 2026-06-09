@@ -8,7 +8,7 @@
         public string Email { get; set; }
         public string UserImage { get; set; }
 
-        public User(string name, string surname, string email, string userImage = "/images/pumpkin.png")
+        public User(string name, string surname, string email, string userImage = "/images/vector.jpg")
         {
             UserId = Guid.NewGuid();
             Name = name;

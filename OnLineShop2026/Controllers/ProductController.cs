@@ -6,7 +6,7 @@ namespace OnLineShop2026.Controllers
 {
     public class ProductController : Controller
     {
-    
+
         IProductRepository productRepository;
 
         public ProductController(IProductRepository prodRep)

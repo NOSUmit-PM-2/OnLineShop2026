@@ -27,5 +27,17 @@ namespace OnLineShop2026.Controllers
             return View(Mapping.ToListProduct(listProducts));
         }
 
+        [HttpPost]
+        public IActionResult Catalog(decimal maxPrice)
+        {
+            List<ProductDB> listProducts = productRepository.GetAll();
+            List<Product> allProducts = Mapping.ToListProduct(listProducts);
+
+           
+            List<Product> filteredProducts = allProducts.Where(p => p.Cost < maxPrice).ToList();
+
+            return View(filteredProducts);
+        }
     }
+
 }

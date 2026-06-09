@@ -4,6 +4,20 @@
 }
 <h1>Каталог</h1>
 <div class="row">
+
+    @using (Html.BeginForm("Catalog", "Home", FormMethod.Get))
+    {
+    <div style="margin-bottom: 15px;">
+            <input type="text"
+               name="searchString"
+               value="@ViewBag.SearchString"
+               placeholder="Поиск по названию..." />
+        <button type="submit">Поиск</button>
+    </div>
+    }
+
+
+
     @foreach(var product in @Model)
     {
         <div class="card" style="width: 18rem;">

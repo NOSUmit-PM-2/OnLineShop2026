@@ -27,5 +27,12 @@ namespace OnLineShop2026.Controllers
             return View(Mapping.ToListProduct(listProducts));
         }
 
+        public IActionResult CatalogSorted()
+        {
+            List<ProductDB> listProducts = productRepository.GetAll();
+            var sorted = Mapping.ToListProduct(listProducts).OrderBy(p => p.Name).ToList();
+            return View("Catalog", sorted);
+        }
+
     }
 }

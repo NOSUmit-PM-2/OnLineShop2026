@@ -13,7 +13,7 @@ namespace OnLineShop2026.Helpers
                 Name = productDB.Name,
                 Description = productDB.Description,
                 Cost = productDB.Cost,
-                PathImage = productDB.PathPicture
+                PathImage = productDB.PathImage
             };
             return product;
         }

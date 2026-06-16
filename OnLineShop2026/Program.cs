@@ -7,15 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// получить строку обращения к БД
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ
 string connection = builder.Configuration.GetConnectionString("DBonlineShop");
 
-// подлючить контекст
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
 
 
-// создать репозиторий
-builder.Services.AddTransient<IProductsDBRepository, ProductsDBRepository>();
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+//builder.Services.AddTransient<IProductsDBRepository, ProductsDBRepository>();
+builder.Services.AddSingleton<IProductsDBRepository, ProductsRepositoryInMemory>();
 
 //builder.Services.AddSingleton<IProductRepository, ProductRepositoryInMemory>();
 //builder.Services.AddSingleton<ICartRepository, CartRepositoryInMemory>();

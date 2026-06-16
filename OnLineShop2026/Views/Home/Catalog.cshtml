@@ -3,8 +3,23 @@
     ViewData["Title"] = "Каталог";
 }
 <h1>Каталог</h1>
+<div class="search-form" style="margin-bottom: 20px;">
+    <form method="post" asp-action="Catalog">
+        <label for="maxPrice">Максимальная цена:</label>
+        <input type="number"
+               id="maxPrice"
+               name="maxPrice"
+               step="0.01"
+               placeholder="Введите максимальную цену" />
+        <button type="submit">Поиск</button>
+    </form>
+</div>
+<div style="margin-bottom: 20px;">
+    <a asp-action="Catalog">Показать все товары</a>
+</div>
+
 <div class="row">
-    @foreach(var product in @Model)
+    @foreach (var product in @Model)
     {
         <div class="card" style="width: 18rem;">
             <img src="@product.PathImage" class="card-img-top" alt="...">
@@ -13,9 +28,13 @@
                 <p class="card-text">@product.Description</p>
                 <p class="card-subtitle">@product.Cost р.</p>
                 <p class="card-text">@product.Id</p>
-                <!--  <a href="/product/index/@product.Id" class="btn btn-primary">Подробнее</a> -->
-                <a asp-controller = "product" asp-action="index" asp-route-id = "@product.Id" class="btn btn-primary">Подробнее</a>
+                <a asp-controller="product" asp-action="index" asp-route-id="@product.Id" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
     }
 </div>
+
+@if (!Model.Any())
+{
+    <p>Товары с ценой меньше указанной не найдены.</p>
+}

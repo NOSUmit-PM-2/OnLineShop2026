@@ -21,10 +21,18 @@ namespace OnLineShop2026.Controllers
             return View();
         }
 
-        public IActionResult Catalog()
+        public IActionResult Catalog(string searchString)
         {
             List<ProductDB> listProducts = productRepository.GetAll();
-            return View(Mapping.ToListProduct(listProducts));
+            var products = Mapping.ToListProduct(listProducts);
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(p => p.Name.Contains(searchString)).ToList();
+            }
+
+            ViewBag.SearchString = searchString;
+            return View(products);
         }
 
     }
